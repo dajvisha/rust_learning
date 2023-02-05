@@ -1,3 +1,4 @@
+use rand::Rng;
 use std::io;
 
 fn main() {
@@ -5,8 +6,9 @@ fn main() {
     println!("Welcome to the guessing game!");
     println!("------------------------------");
 
-    println!("Please input your guess:");
+    let secret_num: i32 = rand::thread_rng().gen_range(1..101);
 
+    println!("Please input your guess:");
     let mut guess = String::new();
 
     io::stdin()
